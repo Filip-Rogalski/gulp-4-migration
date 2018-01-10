@@ -1,4 +1,5 @@
 import './tasks/browserSync.js';
+import './tasks/clean.js';
 import './tasks/scripts.js';
 import './tasks/sass.js';
 import './tasks/watch.js';
