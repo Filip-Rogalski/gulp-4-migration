@@ -3,7 +3,7 @@ import sass from './sass.js';
 
 const watch = gulp.series('browserSync', gulp.parallel(
     (done) => {
-        gulp.watch('styles/*.scss', gulp.series(sass));
+        gulp.watch('styles/*.scss', sass);
         done();
     }, 
     (done) => {

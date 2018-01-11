@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "browserify ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
+    "watch": "watchify ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +27,7 @@
     "browser-sync": "^2.23.5",
     "browserify": "^15.0.0",
     "del": "^3.0.0",
+    "gulp-babel": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
