@@ -1,6 +1,7 @@
 import { task, dest } from 'gulp';
 import browserify from 'browserify';
 import watchify from 'watchify';
+// import uglify from 'gulp-uglify';
 import gutil from 'gulp-util';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -33,6 +34,7 @@ const buildDev = (file) => {
                 gutil.log(err);
             })
             .pipe(source('main.js'))
+            .pipe(buffer())
             .pipe(dest('scriptsBuild'))
             .pipe(browserSync.stream());
     }

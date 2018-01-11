@@ -2,9 +2,11 @@
   "name": "gulp-migration",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "scripts/main.js",
   "scripts": {
     "build": "browserify ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
+    "buildxjq": "browserify --exclude node_modules/jquery/dist/jquery.js ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
+    "buildx": "browserify --no-bundle-external ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
     "watch": "watchify ./scriptsBuild/main.js -o ./browserifyBuild/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +19,7 @@
   "homepage": "https://bitbucket.org/frogal/gulp-migration#readme",
   "dependencies": {
     "gulp": "^4.0.0",
-    "gulp-sourcemaps": "^2.6.3"
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -29,6 +31,11 @@
     "del": "^3.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-stream": "^1.24.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.9.0"

@@ -15,13 +15,34 @@ exports.default = add;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.jQuery = _jquery2.default;
+
+var display = function display() {
+    console.log('display');
+    console.log((0, _jquery2.default)(document));
+};
+
+exports.default = display;
+},{"jquery":undefined}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var multiply = function multiply(a, b) {
     console.log('multiply');
     return a * b;
 };
 
 exports.default = multiply;
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var _add = require('./components/add.js');
@@ -32,12 +53,16 @@ var _multiply = require('./components/multiply.js');
 
 var _multiply2 = _interopRequireDefault(_multiply);
 
+var _display = require('./components/display.js');
+
+var _display2 = _interopRequireDefault(_display);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var a = 5;
+var a = 4;
 var b = 5;
-var c = 6;
 console.log((0, _add2.default)(a, b));
 console.log((0, _multiply2.default)(a, b));
-console.log((0, _multiply2.default)(c, b));
-},{"./components/add.js":1,"./components/multiply.js":2}]},{},[3]);
+
+(0, _display2.default)();
+},{"./components/add.js":1,"./components/display.js":2,"./components/multiply.js":3}]},{},[4]);
